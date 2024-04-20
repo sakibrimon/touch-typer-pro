@@ -29,12 +29,10 @@ function handleKeyboardKeyUpEvent(event) {
         gameOver();
     }
 
-    // the key player is expected to press
-    const currentAlphabetElement = document.getElementById('current-alphabet');
-    const currentAlphabet = currentAlphabetElement.innerText;
-    const expectedAlphabet = currentAlphabet.toLowerCase();
+    // the key which is expected to press by the player
+    const expectedAlphabet = getElementTextById('current-alphabet').toLowerCase();
 
-    // check if right or wrong key is pressed
+    // check if the key pressed is right or wrong
     if (playerPressed === expectedAlphabet) {
         console.log('you got a point!');
 
@@ -101,7 +99,7 @@ function continueGame() {
 }
 
 function play() {
-    // hide everything show only the playground
+    // hide everything, show the playground only
     hideElementById('home-screen');
     hideElementById('final-score');
     showElementById('play-ground');
